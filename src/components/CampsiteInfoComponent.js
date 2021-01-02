@@ -13,7 +13,7 @@ class CampsiteInfo extends Component {
             return (
               <div className="col.md-5 m-1">
                   <h4>Comments</h4>
-                  {this.props.campsite.comments.map(comm => 
+                  {this.props.comments.map(comm => 
                   <div key={comm.id}>
                      "{comm.text}"
                       <br></br>
@@ -49,7 +49,7 @@ class CampsiteInfo extends Component {
                 <div className="container">
                     <div className="row">
                         {this.renderCampsite(this.props.campsite)}
-                        {this.renderComments(this.props.campsite.comments)}
+                        {this.renderComments(this.props.comments)}
                     </div>
                 </div>
             );
