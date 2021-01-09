@@ -62,7 +62,7 @@ class Header extends Component {
                             <Nav navbar>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/home">
-                                        <i className="fa fa-home fa-lg" /> Home
+                                         Home
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
@@ -89,6 +89,7 @@ class Header extends Component {
                         </Collapse>
                     </div>
                 </Navbar>
+                
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                     <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
                     <ModalBody>
