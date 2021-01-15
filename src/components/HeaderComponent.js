@@ -1,11 +1,15 @@
 
 
 
-import React, { Component }  from 'react';
-import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,
+import React, { Component } from 'react';
+import {
+    Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,
     Button, Modal, ModalHeader, ModalBody,
-    Form, FormGroup, Input, Label } from 'reactstrap';
+    Form, FormGroup, Input, Label
+} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { Fade } from 'react-animation-components';
+
 
 class Header extends Component {
 
@@ -13,8 +17,8 @@ class Header extends Component {
         super(props);
 
         this.state = {
-          isNavOpen: false,
-          isModalOpen: false
+            isNavOpen: false,
+            isModalOpen: false
         };
 
         this.toggleNav = this.toggleNav.bind(this);
@@ -47,8 +51,10 @@ class Header extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col">
-                                <h1>NuCamp</h1>
-                                <h2>a better way to camp</h2>
+                                <Fade in >
+                                    <h1>NuCamp</h1>
+                                    <h2>a better way to camp</h2>
+                                </Fade>
                             </div>
                         </div>
                     </div>
@@ -59,28 +65,30 @@ class Header extends Component {
                         <NavbarBrand className="mr-auto" href="/"><img src="/assets/images/logo.png" height="30" width="30" alt="NuCamp Logo" /></NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <Nav navbar>
-                                <NavItem>
-                                    <NavLink className="nav-link" to="/home">
-                                         Home
+                            <Fade in>
+                                <Nav navbar>
+                                    <NavItem>
+                                        <NavLink className="nav-link" to="/home">
+                                            Home
                                     </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="nav-link" to="/directory">
-                                        <i className="fa fa-list fa-lg" /> Directory
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink className="nav-link" to="/directory">
+                                            <i className="fa fa-list fa-lg" /> Directory
                                     </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="nav-link" to="/aboutus">
-                                        <i className="fa fa-info fa-lg" /> About
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink className="nav-link" to="/aboutus">
+                                            <i className="fa fa-info fa-lg" /> About
                                     </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="nav-link" to="/contactus">
-                                        <i className="fa fa-address-card fa-lg" /> Contact Us
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink className="nav-link" to="/contactus">
+                                            <i className="fa fa-address-card fa-lg" /> Contact Us
                                     </NavLink>
-                                </NavItem>
-                            </Nav>
+                                    </NavItem>
+                                </Nav>
+                            </Fade>
                             <span className="navbar-text ml-auto">
                                 <Button outline onClick={this.toggleModal}>
                                     <i className="fa fa-sign-in fa-lg" /> Login
@@ -89,11 +97,11 @@ class Header extends Component {
                         </Collapse>
                     </div>
                 </Navbar>
-                
+
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                     <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
                     <ModalBody>
-                    <Form onSubmit={this.handleLogin}>
+                        <Form onSubmit={this.handleLogin}>
                             <FormGroup>
                                 <Label htmlFor="username">Username</Label>
                                 <Input type="text" id="username" name="username"

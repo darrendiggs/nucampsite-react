@@ -70,7 +70,7 @@ class Main extends Component {
             />
             );
         };
-
+ 
         return (
             <div>
                <Header />
