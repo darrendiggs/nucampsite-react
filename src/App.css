@@ -29,6 +29,7 @@ h2 {
 .site-footer {
   background-image: linear-gradient(#CEC8FF, white);
   padding: 20px 0;
+  margin-top: 20px;
 }
 
 .jumbotron {
