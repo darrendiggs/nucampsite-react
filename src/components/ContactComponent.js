@@ -33,7 +33,6 @@ class Contact extends Component {
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleBlur = (field) => () => {
@@ -48,13 +47,12 @@ class Contact extends Component {
         const value = target.type === 'checkbox' ? target.checked : target.value;
 
         this.setState({
-            [name]: value
+            [name]: value 
         });
     }
 
-    handleSubmit(values) {
-        console.log('Current State is: ' + JSON.stringify(values));
-        alert('Current State is: ' + JSON.stringify(values));
+    handleSubmit = (values) => {
+        this.props.postFeedback(values);
         this.props.resetFeedbackForm();
     }
 
